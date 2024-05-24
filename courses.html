@@ -311,6 +311,35 @@ body {
   text-align: center;
   margin-top: 40px;
 }
+    @media only screen and (max-width: 768px) {
+  /* Responsive styles for course cards */
+  .courses {
+    padding: 20px;
+  }
+
+  .course-cards {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .course-card {
+    padding-bottom: 15px;
+  }
+
+  .course-card img {
+    height: 150px;
+  }
+
+  /* Responsive styles for filters */
+  .filters {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filters select {
+    margin-bottom: 10px;
+  }
+}
+
 
   </style>
   <script>
