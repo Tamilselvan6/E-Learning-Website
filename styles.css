@@ -1,0 +1,1265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+.containere {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  #user-info {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+  /* Style for the Google Sign-In button */
+.g-signin2 {
+    display: inline-block;
+    background-color: #4285f4; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 20px; /* Padding around the button text */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Button text size */
+    text-decoration: none; /* Remove default link underline */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+/* Hover effect for the Google Sign-In button */
+.g-signin2:hover {
+    background-color: #357ae8; /* Darker background color on hover */
+}
+
+/* Optional: Additional styling for the Google Sign-In button */
+.g-signin2 img {
+    vertical-align: middle; 
+    margin-right: 10px; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 500;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.login-popup {
+    position: fixed;
+    width: 320px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.login-popup.active {
+    display: block;
+}
+
+.login-popup h2 {
+    margin: 0 0 20px;
+}
+
+.login-popup .input-group {
+    margin-bottom: 15px;
+}
+
+.login-popup .input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-popup .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-popup .login-submit {
+    background-color: #724ae8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.login-popup .login-submit:hover {
+    background-color: #5e3aa7;
+}
+/* Header styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+.head-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    background-color: #724ae8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #5e3aa7;
+}
+
+#userNameDisplay {
+    margin-right: 10px;
+}
+
+/* Login popup styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 500;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.login-popup.active {
+    display: block;
+}
+
+.login-popup h2 {
+    margin: 0 0 20px;
+}
+
+.login-popup .input-group {
+    margin-bottom: 15px;
+}
+
+.login-popup .input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-popup .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-popup .login-submit {
+    background-color: #724ae8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.login-popup .login-submit:hover {
+    background-color: #5e3aa7;
+}
+
+
+.hero {
+    background-image: url('https://techmidpoint.com/wp-content/uploads/2022/05/Background-Animation-Effect-Using-HTML-and-CSS.jpg'); /* Replace 'background.jpg' with the path to your background image */
+    background-size: cover;
+    background-attachment: fixed; 
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.about {
+    padding: 50px 0;
+     background-color: #f9f9f9;
+}
+
+.about-content {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+.about-list {
+    list-style:circle;
+    padding: 0;
+    margin: 0;
+    
+}
+.about-list li {
+    margin-top: 10px;
+}
+
+.about-list li strong {
+    font-weight: bold;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Course Section Styles */
+.courses {
+    background-color: #ffffff;
+    padding: 40px 0;
+   
+}
+
+.courses h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    justify-content: center;
+}
+
+.course-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center; /* Center align content */
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-card img {
+    width: 100%;
+    border-radius: 5px 5px 0 0; 
+    margin-bottom: 15px;
+}
+
+.course-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.course-card .duration {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.course-card .enroll-btn {
+    display: inline-block;
+    padding: 8px 26px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+.centered-button {
+    text-align: center;
+    margin-top: 40px; 
+}
+
+.view-btn {
+    background-color: #003e80;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Added color transition */
+}
+
+.view-btn:hover {
+    background-color: #002b5a; /* Darker shade on hover */
+}
+
+
+.course-card .enroll-btn:hover {
+    background-color: #0056b3;
+}
+
+.become-instructor {
+    background-color: #f9f9f9;
+    background-image: url('https://themes.muffingroup.com/be/personaltrainer/wp-content/uploads/2017/11/PERSONAL-TRAINER-OFFER-BG.jpg'); /* Add a unique background image */
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+}
+
+.instructor-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.instructor-content {
+    flex: 1;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.instructor-content h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.instructor-content p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.instructor-content .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.instructor-content .btn:hover {
+    background-color: #0056b3;
+}
+
+.instructor-image-container {
+    flex: 1;
+    text-align: right;
+}
+
+.instructor-image-container img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.contact {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.get-in-touch {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.help-message {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: #000000;
+}
+.info {
+    font-size: 16px;
+    color: #333;
+}
+
+.info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.info strong {
+    font-weight: bold;
+}
+
+.info i {
+    margin-right: 5px;
+    color: #007bff;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    width: calc(50% - 20px);
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    color: #121212;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: #232323;
+}
+
+.contact-form {
+    width: calc(50% - 20px);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #f2f2f2;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #1e1e1e;
+    padding: 40px 0;
+    color: #ffffff;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+.footer-contact-info{
+    color: #d6d5d5;
+}
+.footer-contact-info p{
+    padding-top: 12px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #cdcdcd;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.newsletter {
+    margin-left: 40px;
+}
+
+.newsletter p {
+    color: #cdcdcd;
+    margin-bottom: 10px;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: #0056b3;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.faq {
+    padding: 50px 0;
+}
+
+.faq h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faq-answer {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+    display: none;
+}
+
+.faq-question.active {
+    color: #0056b3;
+}
+
+.faq-question.active + .faq-answer {
+    display: block;
+}/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+    
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Show Modal and Overlay */
+.modal.show,
+.overlay.show {
+    display: block;
+}
+
+/* Confirmation Message */
+.confirmation-message {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Enrollment Button */
+#confirmEnrollBtn {
+    margin-top: 5px;
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#confirmEnrollBtn:hover {
+    background-color: #45a049;
+}
+
+
+#courseDetails h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#courseDetails p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+/* media query */
+@media screen and (max-width: 768px) {
+  header .logo img {
+    width: 120px;
+  }
+
+  header nav ul {
+    display: none;
+  }
+
+  header nav {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  header nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-content {
+    flex-direction: column-reverse;
+  }
+
+  .about-text,
+  .about-image {
+    flex: none;
+    width: 100%;
+  }
+
+  .course-card {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .instructor-container {
+    flex-direction: column;
+  }
+
+  .instructor-content,
+  .instructor-image-container {
+    width: 100%;
+  }
+
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .footer-contact-info p {
+    padding: 5px 0;
+  }
+
+  .newsletter input[type="email"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* chatbox */
+.chatbot-toggler {
+    position: fixed;
+    right: 40px;
+    bottom: 35px;
+    height: 50px;
+    width: 80px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #724ae8;
+    border-radius: 50%;
+}
+
+.chatbot-toggler i {
+    position: absolute;
+}
+
+.show-chatbot .chatbot-toggler i:first-child,
+.chatbot-toggler i:last-child {
+    opacity: 0;
+}
+
+.show-chatbot .chatbot-toggler i:last-child {
+    opacity: 1;
+}
+
+.chatbot {
+    position: fixed;
+    right: 40px;
+    bottom: 100px;
+    width: 420px;
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    max-height: auto;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+.show-chatbot .chatbot {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.chatbot header {
+    align-items: end;
+    background: #724ae8;
+    padding: 16px 0;
+    text-align: center;
+}
+
+.chatbot header h2 {
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.chatbot header i {
+    position: absolute;
+    right: 20px;
+    font-size: larger;
+    display: none;
+    top: 33px;
+    color: #fff;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.chatbot .chatbox {
+    height: 400px;
+    overflow-y: auto;
+    padding: 30px 20px 70px;
+}
+
+.chatbox .chat {
+    display: flex;
+}
+
+.chatbox .incoming i {
+    height: 32px;
+    width: 32px;
+    color: #fff;
+    align-self: flex-end;
+    background: #724ae8;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 4px;
+    margin: 0 10px 7px 0;
+}
+
+.chatbox .outgoing {
+    margin: 20px 0;
+    justify-content: flex-end;
+}
+
+.chatbox .chat p {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    max-width: 75%;
+    padding: 12px 16px;
+    border-radius: 10px 10px 0 10px;
+    background: #724ae8;
+}
+
+.chatbox .incoming p {
+    background: #f2f2f2;
+    color: #000;
+    border-radius: 10px 10px 10px 0;
+}
+
+.chatbox .outgoing p {
+    background: #724ae8;
+    color: #fff;
+    border-radius: 10px 10px 0 10px;
+}
+
+.chatbot .chat-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    width: calc(100% - 16px);
+    height: 55px;
+    font-size: 0.95rem;
+    padding: 16px 15px 15px 0;
+}
+
+.chat-input i {
+    color: #724ae8;
+    align-self: flex-end;
+    line-height: 55px;
+    visibility: hidden;
+    cursor: pointer;
+    font-size: 12px;
+    height: 55px;
+    font-size: 1.35rem;
+}
+
+.chat-input textarea:valid ~ i {
+    visibility: visible;
+}
+.question-button {
+    background-color: #724ae8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%; 
+    text-align: left; 
+}
+
+.question-button:hover {
+    background-color: #5e3aa7;
+}
+
+@media (max-width: 490px) {
+    .chatbot {
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .chatbot .chatbox {
+        height: 90%;
+    }
+
+    .chatbot header i {
+        display: block;
+    }
+}
+
+/* chatbot container */
+.chatbot-container {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+}
+
+/* chatbot toggler button */
+.chatbot-toggler {
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #724ae8;
+    border-radius: 50%;
+    position: relative;
+}
+
+.chatbot-toggler i {
+    position: absolute;
+    transition: opacity 0.3s;
+}
+
+.chatbot-toggler i:first-child {
+    opacity: 1;
+}
+
+.chatbot-toggler i:last-child {
+    opacity: 0;
+}
+
+/* chatbot visibility toggling */
+.chatbot-container.show-chatbot .chatbot-toggler i:first-child {
+    opacity: 0;
+}
+
+.chatbot-container.show-chatbot .chatbot-toggler i:last-child {
+    opacity: 1;
+}
+
+.chatbot {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    width: 320px;
+    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.3s;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chatbot-container.show-chatbot .chatbot {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.chatbot header {
+    background: #724ae8;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+}
+
+.chatbot header h2 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.chatbot header i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.chatbox {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.chatbox .chat {
+    display: flex;
+    align-items: flex-end;
+    margin: 10px 0;
+}
+
+.chatbox .incoming i,
+.chatbox .outgoing i {
+    height: 32px;
+    width: 32px;
+    background: #724ae8;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chatbox .incoming i {
+    background: #724ae8;
+}
+
+.chatbox .incoming p {
+    background: #f2f2f2;
+    color: #000;
+    border-radius: 10px 10px 10px 0;
+}
+
+.chatbox .outgoing {
+    justify-content: flex-end;
+}
+
+.chatbox .outgoing p {
+    background: #724ae8;
+    color: #fff;
+    border-radius: 10px 10px 0 10px;
+}
+
+.chatbox .chat p {
+    max-width: 75%;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input textarea {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    resize: none;
+    height: 45px;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.chat-input i {
+    color: #724ae8;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+/* responsive design */
+@media (max-width: 768px) {
+    .chatbot {
+        width: 90%;
+        right: 5%;
+        bottom: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot {
+        width: 100%;
+        height: 100%;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+
+    .chatbox {
+        height: calc(100% - 120px);
+    }
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development E-Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <!-- Include the Firebase configuration -->
+    <script src="https://kit.fontawesome.com/0a682b9dd5.js" crossorigin="anonymous"></script>
+    <script src="firebase-config.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="chatbot-container ">
+        <button class="chatbot-toggler" id="chatbotToggler">
+            <i class="fa-regular fa-message" style="color: #ffffff;"></i>
+            <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
+        </button>
+
+        <div class="chatbot" id="chatbot">
+            <header>
+                <h2>Chatbox</h2>
+                <i class="fa-solid fa-xmark" id="closeChatbot" style="color: #ffffff;"></i>
+            </header>
+            <ul class="chatbox" id="chatboxMessages">
+            </ul>
+            <div class="chat-input">
+                <textarea id="userInput" placeholder="Type your message..."></textarea>
+                <i class="fa-solid fa-paper-plane" id="sendButton"></i>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="head-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#pages">Pages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <li id="userNameDisplay" style="display: none;"></li>
+                <button id="loginBtn" class="btn">Login</button>
+                <button id="logoutBtn" class="btn" style="display: none;" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="login-popup" id="loginPopup">
+        <h2>Login</h2>
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="loginEmail" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="loginPassword" required>
+        </div>
+        <button class="login-submit" id="loginSubmit">Login</button>
+    </div>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to Web Development<br> E-Learning</h1>
+                <p>Start your journey to becoming a web developer today!</p>
+                <a id="loginBtn" class="btn">Join Now</a>
+                    
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>Welcome to TamilAcademy, your ultimate destination for mastering web development. We're committed
+                        to providing accessible and innovative learning experiences that adapt to your schedule and
+                        learning style.</p>
+                    <div class="about-content">
+                        <ul class="about-list">
+                            <li><strong>Instructors</strong></li>
+                            <li><strong>Interactive Learning</strong></li>
+                            <li><strong>Comprehensive Curriculum</strong></li>
+                        </ul>
+                        <ul style="padding-left: 20px;" class="about-list">
+                            <li><strong>Community Support</strong></li>
+                            <li><strong>Personalized Learning Paths</strong></li>
+                            <li><strong>Certification and Recognition</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://cdn.elearningindustry.com/wp-content/uploads/2020/12/the-importance-of-elearning-advantages-and-benefits.png"
+                        alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2>Recommended Courses</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <img src="https://www.digitalsilk.com/wp-content/uploads/2023/03/web-development-terms-hero.jpg"
+                        alt="Web Development Basics">
+                    <h3>Web Development Basics</h3>
+                    <p>An introduction to HTML, CSS, and JavaScript.</p>
+                    <p class="duration">Duration: 6 weeks</p>
+                    <a class="enroll-btn">Enroll Now</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="https://www.namasteui.com/wp-content/uploads/2018/08/front-end-web-development-768x427.jpg"
+                        alt="Frontend Web Development">
+                    <h3>Frontend Web Development</h3>
+                    <p>Mastering HTML, CSS, and JavaScript for building interactive websites.</p>
+                    <p class="duration">Duration: 10 weeks</p>
+                    <a class="enroll-btn">Enroll Now</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="https://www.smartsight.in/wp-content/uploads/2020/09/developer-300x169.jpg"
+                        alt="Backend Web Development">
+                    <h3>Backend Web Development</h3>
+                    <p>Learn server-side programming with Node.js and databases.</p>
+                    <p class="duration">Duration: 8 weeks</p>
+                    <a class="enroll-btn">Enroll Now</a>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="centered-button">
+            <a class="view-btn" href="./courses.html">View All Courses</a>
+        </div>
+
+
+    </section>
+    <!-- Add a modal for confirmation -->
+    <div id="enrollConfirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Confirmation</h2>
+            <div id="courseDetails">
+                <!-- Course details will be inserted here dynamically -->
+            </div>
+            <p>Are you sure you want to enroll in this course?</p>
+            <button id="confirmEnrollBtn">Yes, Enroll Now</button>
+        </div>
+    </div>
+
+    <section id="become-instructor" class="become-instructor">
+        <div class="instructor-container">
+            <div class="instructor-content">
+                <h2>Become an Instructor</h2>
+                <p>Are you passionate about web development? Share your knowledge with others and become an instructor
+                    with us!</p>
+                <a href="../instructor.html" class="btn">Start Teaching</a>
+            </div>
+            <div class="instructor-image-container">
+                <img src="https://www.pearson.com/content/dam/one-dot-com/one-dot-com/ped-blogs/wp-content/uploads/man-in-denim-shirt-working-on-laptop-1600x800-770x385.jpg.transform/big-size-xl/img.jpeg"
+                    alt="Instructor Image">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="get-in-touch">Get In Touch</p>
+                    <p class="help-message">I'm happy to help! If you're looking for contact information or details
+                        about SecretCoder's online free courses website for e-learning, please feel free to reach out.
+                    </p>
+                    <div class="info">
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Office</strong> <br>123 Street, Madurai,
+                            Tamilnadu</p>
+                        <p><i class="fas fa-phone"></i> <strong>Mobile</strong><br> +91 9384870052</p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email</strong><br> tamilacademy@gmail.com</p>
+                    </div>
+
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3 class="faq-question">What services does our website offer?</h3>
+                    <p class="faq-answer">Our website offers a range of services aimed at promoting education and awareness about cybersecurity.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">How can I become a member of our organization?</h3>
+                    <p class="faq-answer">To become a member of our organization, you can visit our website and fill out the membership form.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What are the benefits of joining our organization?</h3>
+                    <p class="faq-answer">Joining our organization provides access to cybersecurity training, workshops, and consultations for individuals and businesses.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">How can I get in touch with your team?</h3>
+                    <p class="faq-answer">You can contact our team through the contact form on our website or by sending an email to [email address].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <ul>
+                    <h2 style="padding-bottom: 10px;">Quick Link</h2>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">FAQs & Help</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact-info">
+                <h2 style="padding-bottom: 10px; color: white;">Contact</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Street, Madurai, Tamilnadu</p>
+                <p><i class="fas fa-phone"></i> +91 9384870052</p>
+                <p><i class="fas fa-envelope"></i> tamilacademy@gmail.com</p>
+            </div>
+            <div class="newsletter">
+                <p>Subscribe to our Newsletter</p>
+                <form action="#" method="POST">
+                    <input type="email" name="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© TamilAcademy, All Right Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+<script>
+    // Initialize Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyBs8nxDW52McKUmIAtwYeL7aqUaLp4Xi5Q",
+        authDomain: "elearning-2f5fe.firebaseapp.com",
+        projectId: "elearning-2f5fe",
+        storageBucket: "elearning-2f5fe.appspot.com",
+        messagingSenderId: "336463362393",
+        appId: "1:336463362393:web:f2a6e3c109ddb0ee523448"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    // Google Sign-In callback function
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+        // You can perform further actions after the user signs in, such as redirecting to a different page.
+
+        // Sign in with Google credential to Firebase
+        var credential = firebase.auth.GoogleAuthProvider.credential({
+            idToken: googleUser.getAuthResponse().id_token,
+        });
+
+        // Sign in with the credential to Firebase
+        firebase.auth().signInWithCredential(credential)
+            .then((userCredential) => {
+                // Signed in
+                var user = userCredential.user;
+                console.log("Firebase User:", user);
+                // You can handle the signed-in user here, such as storing user information in a database or redirecting to a different page.
+            })
+            .catch((error) => {
+                // Handle errors
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.error("Firebase Sign-In Error:", errorCode, errorMessage);
+            });
+    }
+
+</script>
+
+</html>

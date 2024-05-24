@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="courses">
+    <div class="filters">
+      <label for="level-filter">Filter by Level:</label>
+      <select id="level-filter">
+        <option value="all">All</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+
+      <label for="duration-filter">Filter by Duration:</label>
+      <select id="duration-filter">
+        <option value="all">All</option>
+        <option value="short">Short (1-6 weeks)</option>
+        <option value="medium">Medium (6-10 hours)</option>
+        <option value="long">Long (10+ weeks)</option>
+      </select>
+
+      <label for="price-filter">Filter by Price:</label>
+      <select id="price-filter">
+        <option value="all">All</option>
+        <option value="free">Free</option>
+        <option value="paid">Paid</option>
+      </select>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="course-search" placeholder="Search for courses...">
+      <button id="search-btn">Search</button>
+    </div>
+
+    <div class="course-cards">
+      <div class="course-card" data-level="beginner" data-duration="6 weeks" data-price="paid">
+        <img src="https://www.digitalsilk.com/wp-content/uploads/2023/03/web-development-terms-hero.jpg" alt="Course 1">
+        <h3>Web Development Basics</h3>
+        <p>An introduction to HTML, CSS, and JavaScript.</p>
+        <p>Duration: 6 weeks</p>
+        <p>Price: free</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      <div class="course-card" data-level="beginner" data-duration="10 weeks" data-price="paid">
+        <img src="https://www.namasteui.com/wp-content/uploads/2018/08/front-end-web-development-768x427.jpg" alt="Course 2">
+        <h3>Frontend Web Development</h3>
+        <p>Mastering HTML, CSS, and JavaScript for building interactive websites.</p>
+        <p>Duration: 10 weeks</p>
+        <p>Price: ₹750</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      <div class="course-card" data-level="intermediate" data-duration="8 weeks" data-price="paid">
+        <img src="https://www.smartsight.in/wp-content/uploads/2020/09/developer-300x169.jpg" alt="Course 3">
+        <h3>Backend Web Development</h3>
+        <p>Learn server-side programming with Node.js and databases.</p>
+        <p>Duration: 8 weeks</p>
+        <p>Price: ₹1000</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      <div class="course-card" data-level="advanced" data-duration="8 weeks" data-price="paid">
+        <img src="./images/course4.jpeg" alt="Course 4">
+        <h3>Advanced CSS Techniques</h3>
+        <p>Exploring advanced concepts in CSS for modern web design.</p>
+        <p>Duration: 8 weeks</p>
+        <p>Price: ₹800</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      
+      <div class="course-card" data-level="beginner" data-duration="6 weeks" data-price="paid">
+        <img src="./images/course5.jpeg" alt="Course 5">
+        <h3>JavaScript Fundamentals</h3>
+        <p>Mastering the fundamentals of JavaScript programming language.</p>
+        <p>Duration: 6 weeks</p>
+        <p>Price: ₹500</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      <div class="course-card" data-level="beginner" data-duration="8 weeks" data-price="paid">
+        <img src="./images/course6.jpeg" alt="Course 6">
+        <h3>Responsive Web Design</h3>
+        <p>Creating websites that adapt to various screen sizes and devices.</p>
+        <p>Duration: 8 weeks</p>
+        <p>Price: ₹750</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      <div class="course-card">
+        <img src="./images/course7.jpeg" alt="Course 7">
+        <h3>Introduction to Python</h3>
+        <p>An introduction to Python programming language for web development.</p>
+        <p>Duration: 6 weeks</p>
+        <p>Price: free</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      
+      <div class="course-card">
+        <img src="./images/course8.jpg" alt="Course 8">
+        <h3>Database Management with SQL</h3>
+        <p>Learning SQL for managing databases in web development.</p>
+        <p>Duration: 8 weeks</p>
+        <p>Price: ₹800</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      
+      <div class="course-card">
+        <img src="./images/course9.jpeg" alt="Course 9">
+        <h3>React.js Essentials</h3>
+        <p>Getting started with React.js library for building user interfaces.</p>
+        <p>Duration: 10 weeks</p>
+        <p>Price: ₹1000</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      
+      <div class="course-card">
+        <img src="./images/course10.jpg" alt="Course 10">
+        <h3>Node.js Development</h3>
+        <p>Building server-side applications with Node.js and Express.js.</p>
+        <p>Duration: 10 weeks</p>
+        <p>Price: ₹1000</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      
+      <div class="course-card">
+        <img src="./images/course11" alt="Course 11">
+        <h3>Advanced JavaScript Frameworks</h3>
+        <p>Exploring advanced JavaScript frameworks like Angular and Vue.js.</p>
+        <p>Duration: 12 weeks</p>
+        <p>Price: ₹1200</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      
+      <div class="course-card">
+        <img src="./images/course12.png" alt="Course 12">
+        <h3>Full-Stack Web Development</h3>
+        <p>Learning both frontend and backend development for full-stack web applications.</p>
+        <p>Duration: 12 weeks</p>
+        <p>Price: ₹1200</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      
+      <div class="course-card">
+        <img src="./images/course13.png" alt="Course 13">
+        <h3>Mobile App Development</h3>
+        <p>Building mobile applications for iOS and Android platforms.</p>
+        <p>Duration: 12 weeks</p>
+        <p>Price: ₹1200</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      
+      <div class="course-card">
+        <img src="./images/course14.png" alt="Course 14">
+        <h3>UI/UX Design Fundamentals</h3>
+        <p>Understanding the principles of user interface and user experience design.</p>
+        <p>Duration: 8 weeks</p>
+        <p>Price: free</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      
+      <div class="course-card">
+        <img src="./images/course15.png" alt="Course 15">
+        <h3>Web Security and Ethics</h3>
+        <p>Exploring security practices and ethical considerations in web development.</p>
+        <p>Duration: 6 weeks</p>
+        <p>Price: ₹600</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      
+      <div class="course-card">
+        <img src="./images/course16.jpeg" alt="Course 16">
+        <h3>Cloud Computing Fundamentals</h3>
+        <p>Understanding cloud computing concepts.</p>
+        <p>Duration: 8 weeks</p>
+        <p>Price: ₹800</p>
+        <button class="cta">Enroll Now</button>
+      </div>
+      
+    </div>
+
+    <div class="pagination">
+      <button class="prev-page">Previous</button>
+      <button class="next-page">Next</button>
+    </div>
+  </main>
+  <style>
+    /* Add your CSS styles here */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.courses {
+  margin: 0 auto;
+  padding: 20px 200px;
+}
+
+/* Filters */
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters label {
+  margin-right: 10px;
+}
+
+.filters select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Search bar */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #003e80;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: #001f40;
+}
+
+
+.course-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.course-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center; /* Center align content */
+}
+
+.course-card img {
+    width: 100%;
+    border-radius: 5px 5px 0 0; 
+    margin-bottom: 15px;
+    height: 210px;
+}
+
+.course-card h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.course-card p {
+  margin: 5px 10px;
+  margin-bottom: 15px;
+}
+
+.cta {
+  background-color: #003e80;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta:hover {
+  background-color: #001f40;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #003e80;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #001f40;
+}
+.centered-button {
+  text-align: center;
+  margin-top: 40px;
+}
+
+  </style>
+  <script>
+    
+    document.addEventListener("DOMContentLoaded", function () {
+  const courseCards = document.querySelectorAll(".course-card");
+  const prevPageButton = document.querySelector(".prev-page");
+  const nextPageButton = document.querySelector(".next-page");
+  const cardsPerPage = 6;
+  let currentPage = 1;
+
+  function showPage(page) {
+    const startIndex = (page - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+
+    courseCards.forEach((card, index) => {
+      if (index >= startIndex && index < endIndex) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+  showPage(currentPage);
+  prevPageButton.addEventListener("click", function () {
+    if (currentPage > 1) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  });
+
+  nextPageButton.addEventListener("click", function () {
+    const numPages = Math.ceil(courseCards.length / cardsPerPage);
+    if (currentPage < numPages) {
+      currentPage++;
+      showPage(currentPage);
+    }
+  });
+});
+const searchInput = document.getElementById('course-search');
+const searchButton = document.getElementById('search-btn');
+searchButton.addEventListener('click', function() {
+    const searchQuery = searchInput.value.toLowerCase();
+    const courseCards = document.querySelectorAll('.course-card');
+    
+
+    courseCards.forEach(function(card) {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase().trim();
+        if (title.includes(searchQuery)|| description.includes(searchQuery)) {
+            
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});// Get the duration filter select element
+const durationFilter = document.getElementById('duration-filter');
+
+// Add event listener to the duration filter
+durationFilter.addEventListener('change', function() {
+    // Get the selected duration value
+    const selectedDuration = durationFilter.value;
+
+    // Get all course cards
+    const courseCards = document.querySelectorAll('.course-card');
+
+    // Loop through each course card
+    courseCards.forEach(function(card) {
+        // Get the duration text from the appropriate <p> tag
+        const durationText = card.querySelector('p:nth-of-type(2)').textContent;
+
+        // Extract the duration value from the text
+        const duration = parseInt(durationText.match(/\d+/)[0]);
+
+        // Check if the selected duration is 'all' or matches the duration of the course
+        if (selectedDuration === 'all' || checkDuration(selectedDuration, duration)) {
+            // If matched, display the card
+            card.style.display = 'block';
+        } else {
+            // If not matched, hide the card
+            card.style.display = 'none';
+        }
+    });
+});
+
+// Function to check if the course duration matches the selected duration
+function checkDuration(selectedDuration, duration) {
+    switch(selectedDuration) {
+        case 'all':
+            return true;
+        case 'short':
+            return duration >= 1 && duration <= 6;
+        case 'medium':
+            return duration > 6 && duration <= 10;
+        case 'long':
+            return duration === 12 || duration > 12;
+        default:
+            return false;
+    }
+}
+
+// Get the price filter select element
+const priceFilter = document.getElementById('price-filter');
+
+// Add event listener to the price filter
+priceFilter.addEventListener('change', function() {
+    // Get the selected price value
+    const selectedPrice = priceFilter.value;
+
+    // Get all course cards
+    const courseCards = document.querySelectorAll('.course-card');
+
+    // Loop through each course card
+    courseCards.forEach(function(card) {
+        // Get the price text from the appropriate <p> tag
+        const priceText = card.querySelector('p:nth-of-type(3)').textContent;
+
+        // Check if the selected price is 'all' or matches the price status of the course
+        if (selectedPrice === 'all' || checkPrice(selectedPrice, priceText)) {
+            // If matched, display the card
+            card.style.display = 'block';
+        } else {
+            // If not matched, hide the card
+            card.style.display = 'none';
+        }
+    });
+});
+
+// Function to check if the course price matches the selected price
+function checkPrice(selectedPrice, priceText) {
+    if (selectedPrice === 'free') {
+        // If selected price is 'free', check if the course is free
+        return priceText.toLowerCase().includes('free');
+    } else {
+        // If selected price is 'paid', check if the course is paid
+        return !priceText.toLowerCase().includes('free');
+    }
+}
+
+
+const levelFilter = document.getElementById('level-filter');
+levelFilter.addEventListener('change', function() {
+    const selectedLevel = levelFilter.value;
+    const courseCards = document.querySelectorAll('.course-card');
+    courseCards.forEach(function(card) {
+        const level = card.dataset.level;
+        if (selectedLevel === 'all' || level === selectedLevel) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+
+  </script>
+</body>
+</html>
+

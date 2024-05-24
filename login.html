@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>eLearning Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #724ae8;
+            padding: 15px;
+            color: #fff;
+            text-align: right;
+        }
+        .navbar .user-name {
+            margin-right: 20px;
+        }
+        .login-btn {
+            background-color: #fff;
+            color: #724ae8;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-btn:hover {
+            background-color: #f2f2f2;
+        }
+        .login-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            display: none;
+            z-index: 1000;
+            border-radius: 10px;
+        }
+        .login-popup.active {
+            display: block;
+        }
+        .login-popup h2 {
+            margin: 0 0 20px;
+        }
+        .login-popup .input-group {
+            margin-bottom: 15px;
+        }
+        .login-popup .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .login-popup .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-popup .login-submit {
+            background-color: #724ae8;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .login-popup .login-submit:hover {
+            background-color: #5e3aa7;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 500;
+        }
+        .overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <span class="user-name" id="userName"></span>
+        <button class="login-btn" id="loginBtn">Login</button>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="login-popup" id="loginPopup">
+        <h2>Login</h2>
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+        </div>
+        <button class="login-submit" id="loginSubmit">Login</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginBtn = document.getElementById('loginBtn');
+            const loginPopup = document.getElementById('loginPopup');
+            const overlay = document.getElementById('overlay');
+            const loginSubmit = document.getElementById('loginSubmit');
+            const userNameDisplay = document.getElementById('userName');
+
+            loginBtn.addEventListener('click', () => {
+                loginPopup.classList.add('active');
+                overlay.classList.add('active');
+            });
+
+            overlay.addEventListener('click', () => {
+                loginPopup.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+
+            loginSubmit.addEventListener('click', () => {
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                // Simulate fetching user's name based on email
+                const userName = email.split('@')[0]; // Simple logic to get user name from email
+
+                if (email && password) {
+                    userNameDisplay.textContent = `Welcome, ${userName.charAt(0).toUpperCase() + userName.slice(1)}`;
+                    loginPopup.classList.remove('active');
+                    overlay.classList.remove('active');
+                } else {
+                    alert('Please enter a valid email and password');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
